@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classic Handbook</title>
+<meta name="description" content="Where to train in MapleStory Classic World: every class, every map, solo or in a party, with the quests, drops and prices to go with it. The desktop planner, run in your browser.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" href="./img/kit/backdrop.webp" as="image">
+<link rel="preload" href="./img/splash.webp" as="image">
+<link rel="stylesheet" href="./site.css">
+</head>
+<body>
+<div id="splash" class="splash">
+<div class="splash-banner" id="splash-banner">
+<img class="splash-bg" id="splash-bg" src="./img/splash.webp" alt="" draggable="false" onerror="this.remove()">
+<div class="splash-version" id="splash-version"></div>
+<div class="splash-sub">Where to train for the best EXP and mesos in MapleStory Classic World, with up-to-date quests, guides, market prices and drop rates</div>
+<div id="splash-text" class="splash-text">Starting Classic Handbook…</div>
+</div>
+</div>
+<script>self.MP_BOOT={version:"1.1.342",splash:"img/splash.webp",titles:{splash:{1:{src:"img/kit/title_splash@1x.webp",w:299,h:52,ax:149.5,ay:26},2:{src:"img/kit/title_splash@2x.webp",w:591,h:99,ax:295.5,ay:49.5}},banner_dark:{1:{src:"img/kit/title_banner_dark@1x.webp",w:184,h:37,ax:92,ay:18.5},2:{src:"img/kit/title_banner_dark@2x.webp",w:358,h:67,ax:179,ay:33.5}},banner_light:{1:{src:"img/kit/title_banner_light@1x.webp",w:184,h:37,ax:92,ay:18.5},2:{src:"img/kit/title_banner_light@2x.webp",w:358,h:67,ax:179,ay:33.5}}},lupins:{splash:{fly:40,height:44,frames:9,1:{sheet:"img/kit/lupin_splash@1x.webp",cell:[44,44],fw:44,rest:"img/kit/lupin_splash_rest@1x.webp",box_r:[0,0,41,44],box_l:[3,0,44,44],banana:"img/kit/banana_splash@1x.webp",banana_size:[17,13]},2:{sheet:"img/kit/lupin_splash@2x.webp",cell:[88,88],fw:88,rest:"img/kit/lupin_splash_rest@2x.webp",box_r:[0,1,81,88],box_l:[7,1,88,88],banana:"img/kit/banana_splash@2x.webp",banana_size:[33,25]}},banner:{fly:36,height:34,frames:9,1:{sheet:"img/kit/lupin_banner@1x.webp",cell:[34,34],fw:34,rest:"img/kit/lupin_banner_rest@1x.webp",box_r:[0,0,32,34],box_l:[2,0,34,34],banana:"img/kit/banana_banner@1x.webp",banana_size:[13,10]},2:{sheet:"img/kit/lupin_banner@2x.webp",cell:[68,68],fw:68,rest:"img/kit/lupin_banner_rest@2x.webp",box_r:[0,1,62,68],box_l:[6,1,68,68],banana:"img/kit/banana_banner@2x.webp",banana_size:[26,19]}}},backdrop:"img/kit/backdrop.webp"};</script>
+<script>"use strict";window.Lupins=function(){const t=[45,65],e=()=>self.MP_BOOT||null,n=()=>(window.devicePixelRatio||1)>=1.5?2:1,i=(t,e)=>t+Math.floor(Math.random()*(e-t+1));function o(){const t=getComputedStyle(document.documentElement).getPropertyValue("--panel").trim().toLowerCase();return"#ffffff"===t||"#fff"===t?"light":"dark"}function s(t,e,n){const i=e.x-e.vx-(t.x-t.vx),o=e.y-e.vy-(t.y-t.vy),s=e.vx-t.vx,l=e.vy-t.vy,a=s*s+l*l,r=0===a?0:Math.max(0,Math.min(1,-(i*s+o*l)/a));if(Math.hypot(i+r*s,o+r*l)>n)return null;if(Math.hypot(i,o)<=n)return 0;const c=i*s+o*l,u=i*i+o*o-n*n;return Math.max(0,Math.min(1,(-c-Math.sqrt(Math.max(0,c*c-a*u)))/a))}return{make:function(o,l){const a=e(),r=a&&a.lupins&&a.lupins[l];if(!r)return null;const c=n(),u=r[c]||r[1],[f,h]=[u.cell[0]/c,u.cell[1]/c],d=r.frames+1,g=u.fw/c,[p,y]=u.banana_size?[u.banana_size[0]/c,u.banana_size[1]/c]:[0,0],m=1.42*Math.max(p,y),x="splash"===l,v=x?300:46,b=t=>Math.round(t*c)/c;let w=!1,M=!1;const k=new Image;k.onload=()=>{w=!0;for(const t of E)C(t,t.frame)},k.src=u.sheet;const z=o,E=[];for(const t of[!1,!0]){const e=document.createElement("div");e.className="kit-lupin",e.style.width=f+"px",e.style.height=h+"px",x||(e.style.cursor="pointer"),o.appendChild(e);const n={right:t,el:e,gen:0,frame:0,winding:!1,banana:null};x||e.addEventListener("click",(()=>I(n))),E.push(n),C(n,0)}function C(t,e){t.frame=e;const n=t.right?0:1,i=t.el;if(!w)return i.style.backgroundImage="url("+u.rest+")",i.style.backgroundSize=f+"px "+2*h+"px",void(i.style.backgroundPosition="0 "+-n*h+"px");i.style.backgroundImage="url("+u.sheet+")",i.style.backgroundSize=d*f+"px "+2*h+"px",i.style.backgroundPosition=-e*f+"px "+-n*h+"px"}let O=null,P=null,T=0,_=0;function L(){const t=x?1130:o.clientWidth||300;if(x){const e=b(70),n=t-b(70),i=b(34)+4;T=b(34),_=3,P=[i-22,i+22];for(const t of E)t.el.style.left=(t.right?n-f:e)+"px",t.el.style.top=i-h/2+"px",t.from=[t.right?n-.8*g:e+.8*g,i-13.2],t.to=t.right?e+g+m/2:n-g-m/2}else{const e=v/2,n=b(14),i=t-b(14),o=b(34);T=v/2,_=2,P=[v/2-17,v/2+17];for(const s of E){const l=(s.right?u.box_r:u.box_l).map((t=>t/c)),a=s.right?t-b(14)+f-l[2]-f:b(14)-l[0];s.el.style.left=a+"px",s.el.style.top=e-h/2+"px",s.from=[s.right?i-.8*g:n+.8*g,e-.3*o],s.to=s.right?n+g+m/2+2:i-g-m/2-2}}}function I(e){M&&w&&!function(t){const e=t.banana;return t.winding||null!==e&&(!e.gone||performance.now()-e.gone<500)}(e)&&(e.gen+=1,R(e,0,e.gen),u.banana&&(e.winding=!0,setTimeout((()=>function(e){if(e.winding=!1,!e.el.isConnected)return;O||(O=function(e,n){const i=[];let o=null;function l(){if(o=null,!e.isConnected)return;for(const t of i.slice())if(null===t.hit){if(t.i+=1,t.i>=t.fly){c(t);continue}const[e,n]=t.path(t.i/(t.fly-1));t.vx=e-t.x,t.vy=n-t.y,t.x=e,t.y=n}else{const e=t.hit;if(e.age+=1,e.age>=12){c(t);continue}t.x+=t.vx,t.y+=t.vy,e.angle+=e.spin}const t=i.filter((t=>null===t.hit&&t.i>0));for(let e=0;e<t.length;e++)for(const n of t.slice(e+1)){const i=t[e];if(null!==i.hit||null!==n.hit)continue;const o=s(i,n,.9*(i.size+n.size)/2);if(null!==o){for(const t of[i,n])t.x-=(1-o)*t.vx,t.y-=(1-o)*t.vy;i.y<n.y||i.y===n.y&&i.right?a(i,n):a(n,i)}}for(const t of i)r(t);i.length&&(o=setTimeout(l,25))}function a(e,i){const o=(t[0]+Math.random()*(t[1]-t[0]))*Math.PI/180,[s,l]=n,a=Math.max(4,Math.min(e.y-s,l-i.y))/12,r=a*Math.tan(o);for(const[t,n]of[[e,-1],[i,1]]){const e=t.i/(t.fly-1);t.hit={age:0,fade:e<=.75?1:(1-e)/.25,angle:t.turn*t.i,spin:1.8*t.turn},t.vx=Math.abs(r)*Math.sign(t.vx||(t.right?-1:1)),t.vy=n*a}}function r(t){let e,n;if(null===t.hit){const i=t.i/(t.fly-1);e=45*t.i*26/t.fly*(t.right?1:-1),n=i<=.75?1:(1-i)/.25}else{const i=t.hit,o=i.fade*(1-i.age/12);e=(Math.round(i.angle/15)%24+24)%24*360/24,n=Math.max(0,Math.ceil(12*o))/12}t.el.style.left=t.x-t.w/2+"px",t.el.style.top=t.y-t.h/2+"px",t.el.style.opacity=n,t.el.style.transform="rotate("+-e+"deg)"+(t.right?"":" scaleX(-1)")}function c(t){t.el.remove(),i.splice(i.indexOf(t),1),t.gone=performance.now()}return{launch:function(t,n,s,a,c,u,f,h){const[d,g]=n(0),p=document.createElement("img");p.className="kit-banana",p.src=s,p.alt="",p.draggable=!1,p.style.width=a+"px",p.style.height=c+"px",e.appendChild(p);const y={el:p,fly:t,path:n,w:a,h:c,size:u,turn:f,right:h,i:0,x:d,y:g,vx:0,vy:0,hit:null};return r(y),i.push(y),o||(o=setTimeout(l,25)),y}}}(z,P));const[n,i]=e.from,o=e.to,l=T,a=_;e.banana=O.launch(r.fly,(t=>[n+(o-n)*t,l+(i-l)*Math.pow(1-t,3)-a*Math.sin(Math.PI*t)]),u.banana,p,y,Math.max(p,y),45*(e.right?1:-1)*26/r.fly,e.right)}(e)),500)))}function R(t,e,n){n===t.gen&&t.el.isConnected&&(e>=r.frames?C(t,0):(C(t,e+1),setTimeout((()=>R(t,e+1,n)),100)))}L(),window.ResizeObserver&&new ResizeObserver(L).observe(o),window.addEventListener("resize",L);const S=[],N=(t,e)=>{const n=setTimeout(e,t);S.push(n)};function q(t){M&&(x?(I(t),N(i(1600,3400),(()=>q(t)))):(N(i(3e3,8e3),(()=>q(t))),"visible"===document.visibilityState&&null!==o.offsetParent&&I(t)))}return{start(){M||(M=!0,E.forEach(((t,e)=>N(x?350+900*e:i(3e3,8e3),(()=>q(t))))))},stop(){M=!1,S.forEach(clearTimeout),S.length=0},place:L}},title:function(t,i,s,l){const a=e();if(!a||!a.titles)return null;const r=document.createElement("img");r.className="kit-title",r.alt="Classic Handbook",r.draggable=!1;const c=()=>{const t="splash"===i?"splash":"banner_"+o(),e=n(),c=(a.titles[t]||{})[e]||(a.titles[t]||{})[1];if(!c)return;r.getAttribute("src")!==c.src&&(r.src=c.src),r.style.width=c.w/e+"px",r.style.height=c.h/e+"px";const[u,f]="function"==typeof s?[s(),l()]:[s,l];r.style.left=Math.round(u*e-c.ax)/e+"px",r.style.top=Math.round(f*e-c.ay)/e+"px"};var u;return c(),t.appendChild(r),"splash"!==i&&(u=c,new MutationObserver(u).observe(document.documentElement,{attributes:!0,attributeFilter:["data-theme","class"]}),window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",u)),window.addEventListener("resize",c),window.ResizeObserver&&new ResizeObserver(c).observe(t),{img:r,put:c}},theme:o}}();</script>
+<script>!function(){var e=document.getElementById("splash-banner"),n=self.MP_BOOT||{};e.style.zoom=Math.min(1,(window.innerWidth-24)/1130,(window.innerHeight-24)/300),document.getElementById("splash-version").textContent=n.version?"v"+n.version:"";var t=window.MP_SPLASH={lupins:null,worker:null,hold:0},s={connecting:["Connecting to ClassicHandbook GitHub",!0,"#f2f5f8"],connected:["Connection successful",!1,"#f2f5f8"],updating:["Updating",!0,"#f2f5f8"],updated:["Update successful",!1,"#3ecf6e"],uptodate:["Up to date",!1,"#949ca7"],offline:["Offline · using saved data",!1,"#949ca7"],local:["Using this PC's data",!1,"#949ca7"],failed:["Couldn't update · using saved data",!1,"#949ca7"]},a=document.getElementById("splash-version"),o=document.createElement("div"),i=document.createElement("div");o.className="splash-stage",i.className="splash-stage dots",e.appendChild(o),e.appendChild(i);var l=document.createElement("canvas").getContext("2d");l.font='11px "Segoe UI", sans-serif';var d=[],c=0,u=null,r=3;function p(e){var n,d,p,f=s[e];u=e,c=performance.now(),o.textContent=f[0],o.style.color=i.style.color=f[2],i.textContent=f[1]?new Array(r+1).join("."):"","updated"===e&&(t.hold=c+500),n=1122-l.measureText(a.textContent).width,d=n-14-l.measureText("......").width,p=u&&s[u][1],o.style.right=1130-(p?d:n-14)+"px",i.style.left=d+"px"}setInterval((function(){d.length&&performance.now()-c>=350&&p(d.shift()),u&&s[u][1]&&(r=3+(r-2)%4,i.textContent=new Array(r+1).join("."))}),320),t.stage=function(e){s[e]&&(d.length||u&&!(performance.now()-c>=350)?d.push(e):p(e))},window.Lupins&&(window.Lupins.title(e,"splash",565,34),t.lupins=window.Lupins.make(e,"splash"),t.lupins&&setTimeout((function(){t.lupins.start()}),20))}();</script>
+<div id="win">
+<div id="app" class="app" hidden>
+<aside class="side" id="side">
+<div class="banner" id="banner"></div>
+<div class="side-top">
+<div class="lbl-sec">Saved characters</div>
+<div class="row presets"><select id="preset" class="combo"></select><button class="x" id="preset-del">✕</button></div>
+<div class="row shots">
+<button class="shot-btn wide" id="shot-stats">Get info from screenshot</button>
+<button class="shot-btn upload" id="shot-upload">Upload<br>or Ctrl+V</button>
+<div class="thumb" id="shot-thumb-box"></div>
+</div>
+</div>
+<div class="side-body" id="side-body">
+<div class="sec-line"></div>
+<div class="sec">
+<div class="sec-head"><span class="lbl-sec">Character</span>
+<span class="level-box"><span class="lbl">Level</span><button class="chip" id="lv-down">−</button><input id="level" type="number" min="1" max="100"><button class="chip" id="lv-up">+</button></span>
+</div>
+<div class="seg" id="seg-branch"></div>
+<div class="seg" id="seg-job"></div>
+<div class="stats" id="stats"></div><div id="char-pad"></div>
+</div>
+<div class="sec-line" id="char-line"></div>
+<div class="sec">
+<div class="sec-head"><span class="lbl-sec">Levels to analyze and show</span></div>
+<div class="row range">
+<input id="from" type="number" min="1" max="100"><span class="to">to</span><input id="to" type="number" min="1" max="100">
+<span class="div"><i></i></span>
+<button class="chip span" data-span="5">±5</button><button class="chip span" data-span="10">±10</button><button class="chip span" data-span="25">±25</button>
+</div>
+</div>
+<div class="sec-line"></div>
+<div class="sec">
+<div class="sec-head party-head"><span class="lbl-sec">Party setup</span><button class="chip randomize" id="party-random">Randomize around my level</button></div>
+<div class="seg" id="seg-party"></div>
+<div class="members" id="members"></div>
+</div>
+<div class="sec-line"></div>
+<div class="sec">
+<div class="sec-head data-head"><span class="lbl-sec">Data<span class="data-when" id="data-when"></span></span></div>
+<div class="src" id="src-game"><i>●</i><span>Game data</span><b>—</b></div>
+<div class="src" id="src-web"><i>●</i><span>Market, quests, guides</span><b>—</b></div>
+<div class="src" id="src-reddit"><i>●</i><span>Reddit</span><b>—</b></div>
+<div class="src" id="src-github"><i>●</i><span>ClassicHandbook GitHub</span><b>waiting</b></div>
+</div>
+</div>
+</aside>
+<aside class="rail" id="rail" hidden>
+<img class="rail-logo" id="rail-logo" alt="">
+<div class="rail-box"><b>CLASS</b><span id="rail-job" class="job">—</span></div>
+<div class="rail-box"><b>LEVEL</b><span id="rail-lv">—</span></div>
+<div class="rail-box"><b>LEVELS</b><span id="rail-view">—</span></div>
+<div class="rail-box"><b>PARTY</b><span id="rail-party">—</span></div>
+</aside>
+<button class="fold" id="fold" aria-label="Fold the side panel"><i></i><i></i><i></i></button>
+<main class="main">
+<nav class="tabs" id="tabs">
+<button class="tab tracker" data-tab="tracker">Live tracker<i class="dot"></i></button>
+<button class="tab help" id="tracker-help">?</button>
+<span class="tabseg" id="tab-seg"><button class="tab" data-tab="plan">Plan</button><button class="tab" data-tab="items">Items/market</button><button class="tab" data-tab="maps">Maps/monsters</button><button class="tab" data-tab="quests">Quests</button><button class="tab" data-tab="build">Build guide</button><button class="tab" data-tab="settings">Settings</button></span>
+<svg class="tab-pointer" id="tab-pointer"></svg>
+<span class="share-row" id="share-row"><label class="switch off"><input type="checkbox" disabled><i></i></label><span>Anonymously share<br>my grinding data</span><button class="share-q" id="share-q">?</button></span>
+</nav>
+<section class="pane" id="pane-plan">
+<div class="cards-slot maps-slot" id="plan-cards-slot">
+<div class="cards" id="cards">
+<div class="map-card" id="card-map">
+<div class="thumb-box" id="now-thumb-box"><img id="now-thumb" alt=""></div>
+<div class="map-head"><span class="map-title" id="now-name">—</span><span class="map-cap" id="now-sub"></span></div>
+<span class="pager"><button class="chev" id="now-prev">‹</button><span id="now-page"></span><button class="chev" id="now-next">›</button><span class="now-mode" id="now-mode"><button class="active" data-mode="rec">Recommended</button><button class="off" data-mode="cur" disabled>Current</button></span></span>
+<div class="map-lower" id="now-lower"><div class="cstrip" id="now-mobs"></div><div class="map-divider" id="now-divider"></div><div class="cstrip" id="now-party"></div></div>
+</div>
+<div class="fig-card" id="card-pct"><div class="fig-title">Approx. level / hour</div><button class="qm">?</button><div class="fig-value"></div><div class="fig-lines muted"></div></div>
+<div class="fig-card" id="card-meso"><div class="fig-title">Approx. mesos / hour</div><button class="qm">?</button><div class="fig-value"></div><div class="fig-lines"></div></div>
+</div>
+</div>
+<div class="head-row"><h2 id="plan-title">Recommended training spots</h2><button class="q" id="help-spots">?</button></div>
+<div class="tbl plan-tbl" id="t-plan"></div>
+<div class="head-row chart-head"><h2 id="chart-title">Recommended spot's expectation and range</h2><button class="q" id="help-chart">?</button>
+<label class="bg-check kpq-check" id="kpq-box"><input type="checkbox" id="kpq"><span class="bg-check-box"><svg viewBox="0 0 18 18"><polyline points="4.5,9.5 7.8,12.6 13.5,5.8"/></svg></span><span class="bg-check-text">KPQ</span></label>
+<div class="chart-controls" id="chart-ctrls">
+<span class="stepper"><button id="band-down">−</button><span id="band-label" style="width:52px">90% CI</span><button id="band-up">+</button></span>
+<span class="stepper"><button id="lines-down">−</button><span id="lines-label" style="width:52px">10 spots</span><button id="lines-up">+</button></span>
+</div>
+<div class="seg inline" id="seg-unit"><button data-unit="pct_hr">Level / hr</button><button data-unit="exp_hr">EXP / hr</button><button data-unit="meso_hr">Meso / hr</button></div>
+</div>
+<div class="chart-wrap"><svg id="chart" class="chart"></svg><div id="chart-tip" class="tip" hidden></div></div>
+</section>
+<section class="pane" id="pane-party">
+<div class="head-row"><h2>Your EXP per hour by party size</h2>
+<div class="seg inline right" id="seg-party-view"><button data-view="spots">Spots for your level</button><button data-view="current" class="off" disabled>Current map</button></div>
+</div>
+<p class="note">Your EXP/hr on each map at each party size, tinted against solo there: green better, red worse. ★ best map per size. Hover a cell for each member's share; double-click to open the map. Your partners are taken to keep your pace (their gear isn't known), so the map is picked by what you do there; a party gets less where the map can't refill fast enough for all of you. EXP shared by the levels under Party setup; +10% per member, up to +30%.</p>
+<div class="party-panel"><div class="pgrid" id="t-party"></div></div>
+</section>
+<section class="pane" id="pane-maps">
+<div class="cards-slot maps-slot" id="maps-cards-slot"></div>
+<div class="toolbar">
+<input id="maps-search" class="entry" placeholder="Search maps or monsters">
+<label class="switch"><input type="checkbox" id="maps-safe"><i></i><span>My level range</span></label>
+<label class="switch" id="maps-weak-label"><input type="checkbox" id="maps-weak"><i></i><span id="maps-weak-text"></span></label>
+<span class="right" id="maps-count"></span>
+</div>
+<p class="note" id="maps-note"></p>
+<div class="maps-split">
+<div class="tbl" id="t-maps"></div>
+<div class="detail" id="map-detail"><p class="note" style="padding:0 6px">Pick a map to see it here, with its monsters and their stats.</p></div>
+</div>
+</section>
+<section class="pane" id="pane-quests"></section>
+<section class="pane" id="pane-items"></section>
+<section class="pane" id="pane-build"></section>
+<section class="pane" id="pane-settings">
+<div class="settings-scroll"><div class="settings-grid">
+<div class="group" hidden>
+<h3>Model</h3>
+<p class="note">How kill speed is estimated. The defaults match what players report.</p>
+<div id="settings"></div>
+<div class="row end"><button class="btn accent wide" id="settings-apply">Apply</button></div>
+</div>
+<div class="group" hidden>
+<h3>Calibrate to your speed</h3>
+<p class="note">Grind somewhere for 10 minutes and enter what you got. Every estimate scales to match you.</p>
+<div class="field"><span>Map</span><select id="cal-map" class="combo"></select></div>
+<div class="field"><span>Your level then</span><input id="cal-level" type="number" class="entry"></div>
+<div class="field"><span>Minutes</span><input id="cal-minutes" type="number" value="10" class="entry"></div>
+<div class="field"><span>EXP gained</span><input id="cal-exp" type="number" class="entry"></div>
+<div class="row end"><span class="muted" id="cal-eff" style="font-size:12px"></span><span class="spacer"></span><button class="btn accent" id="cal-go">Calibrate</button><button class="btn" id="cal-reset" style="min-width:64px">Reset</button></div>
+</div>
+<div class="group" hidden>
+<h3>Updates</h3>
+<p class="note">Game data, prices, drop rates, guides and posts all come from Classic Handbook's data feed on GitHub, checked every few minutes while the page is open. This page reads no other site.</p>
+<div class="field"><span>Check for new data every (minutes)</span><input class="entry" id="auto-minutes"></div>
+</div>
+<div class="group" style="grid-column: 1 / -1">
+<h3>App icon</h3><span class="icon-name" id="icon-name"></span>
+<p class="note">Used for the window, taskbar and sidebar. The exe file in Explorer keeps the icon it was built with.</p>
+<div class="icon-grid" id="icon-grid"></div>
+</div>
+</div>
+<p class="credits" id="credits">Unofficial fan tool, not affiliated with Nexon. It only reads public data and never touches the game. Game data and pictures: <a href="https://osmsdataexplorer.com" target="_blank" rel="noopener">OSMS Data Explorer</a> by ohmi, CC BY 4.0. MapleStory and its art (monsters, items, maps, skills, NPCs) © Nexon. Drops, droppers and the world map: <a href="https://maplestory.quest" target="_blank" rel="noopener">MapleStory Quest</a>. Drop rates measured in Classic World: <a href="https://mapleclassic.wiki" target="_blank" rel="noopener">MapleClassic Wiki</a>'s kill tests, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> (the drop rates built from them keep that licence; this page is non-commercial). Prices: <a href="https://maplestory-classic.com/market" target="_blank" rel="noopener">maplestory-classic.com</a>, <a href="https://cozy.markets" target="_blank" rel="noopener">Cozy Market</a>, <a href="https://kerning.gg" target="_blank" rel="noopener">Kerning Exchange</a>, <a href="https://freemarketclassic.com" target="_blank" rel="noopener">freemarketclassic.com</a>, <a href="https://henefm.com" target="_blank" rel="noopener">HeneFM</a>, <a href="https://mapleprices.net" target="_blank" rel="noopener">Maple Prices</a>, <a href="https://ms-classic.com/prices" target="_blank" rel="noopener">MS-Classic</a>, <a href="https://megapn.com/price" target="_blank" rel="noopener">megapn</a>, <a href="https://maplestorymarket.com" target="_blank" rel="noopener">MapleStory Market</a>. Events: maplestory-classic.com. Builds: NiaMeowDB, ms-classic.com, mapleclassic.wiki and the other guides each build names. Spawn rules: <a href="https://meowdb.com/msclassic/guides/spawn-engine-respawn-and-map-capacity" target="_blank" rel="noopener">MeowDB</a>. Attack timings: <a href="https://ayumilovemaple.wordpress.com/2009/09/06/maplestory-attack-speed-reference/" target="_blank" rel="noopener">ayumilove</a>. Guide picks: MapleStory Quest, metammo, henesys.gg. Posted rates: public Reddit feeds. Python in the browser: <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>. Chart font: DejaVu Sans (Bitstream Vera licence, as matplotlib draws the app's chart). The desktop app, with the live tracker: <a href="https://github.com/nairck/ClassicHandbook-source" target="_blank" rel="noopener">github.com/nairck/ClassicHandbook-source</a>.</p>
+<p class="about"><span id="about-text"></span> <a href="#" id="doc-licence">Licence</a> <a href="#" id="doc-notices">Third-party notices</a></p>
+<div class="group reports-panel">
+<h3>Reports</h3>
+<div class="toolbar">
+<label class="switch"><input type="checkbox" id="only-reports" checked><i></i><span>Only posts with EXP numbers</span></label>
+<span class="right" id="reports-count"></span>
+</div>
+<div class="tbl" id="t-reports"></div>
+</div>
+</div>
+</section>
+<section class="pane" id="pane-tracker">
+<div class="cards-slot maps-slot" id="tracker-cards-slot"></div>
+<div class="tracker-box">
+<div class="tracker-bar">
+<div style="display:flex;flex-direction:column;gap:2px"><label class="switch"><input type="checkbox"><i></i><span>Screenshot and analyze my game</span></label><label class="switch"><input type="checkbox"><i></i><span>Auto update stats and party</span></label><label class="switch"><input type="checkbox"><i></i><span>Cards over the game</span></label></div>
+<button class="btn">New session</button><select class="combo" style="width:140px"><option>No sessions yet</option></select>
+</div>
+<div class="tracker-note">No session yet. Turn on "Screenshot and analyze my game" above: it logs each session by itself and plots your EXP and mesos per hour here, over its last readings (Smoothing).</div>
+<div class="welcome" id="welcome">
+<h2>Welcome to the Classic Handbook live tracker</h2>
+<p class="warn">Use it at your own risk: the program and its creator take no responsibility for your account.</p>
+<ul class="facts">
+<li>Nexon's Terms of Service (updated Sept 7, 2026) say nothing about taking or reading screenshots. Their Code of Conduct (section V) bans bots, macros, data mining and third-party software that modifies the game.</li>
+<li>No ban is confirmed in global MapleStory or Classic World for a tool that only reads screenshots. In Mapleland (Korea), about 8 players reported 1-day "external program" bans from Dec 2025 to Jun 2026 while running an EXP tracker that read the screen every second (1 Hz).</li>
+<li>This tracker reads at most once every 5 s (0.2 Hz), at random times, and never touches the game: no memory reads, no keys, no clicks.</li>
+</ul>
+<p><a href="https://www.nexon.com/main/en/legal/tou" target="_blank" rel="noopener">Nexon Terms of Service</a> · <a href="https://arca.live/b/mapleland/156458419" target="_blank" rel="noopener">Mapleland ban report</a> · <a href="https://github.com/beanguri/Maple-Classic-Exp-Overlay/issues/4" target="_blank" rel="noopener">Classic World overlay report</a></p>
+<h3>What it does to each screenshot</h3>
+<ol class="steps">
+<li><b>Finds the game.</b> Looks for the MapleStory window by its title. Nothing is sent to it.</li>
+<li><b>Takes one screenshot.</b> One picture of that window, at a random time in your read range.</li>
+<li><b>Picks out the parts.</b> The status bar (level, class, HP, MP, EXP), minimap, inventory, and the EXP, party bonus, mesos and drops messages; with Auto update on, the stat, skill and Party windows, found wherever they're open.</li>
+<li><b>Reads the numbers.</b> Turned into text on your PC.</li>
+<li><b>Deletes the screenshot.</b> Read in memory and deleted at once: never saved, sent or kept. Only the numbers stay, averaged over your Smooth setting.</li>
+</ol>
+<h3>How often it reads</h3>
+<p class="muted">Drag the two handles to set the shortest and longest wait between screenshots. Each wait is drawn at random from the bell between them, so reads never fall on a regular beat.</p>
+<div class="welcome-bottom">
+<label class="muted"><input type="checkbox" disabled> Do not show this again</label>
+<button class="accept" disabled>Accept and use</button>
+<label class="muted"><input type="checkbox" disabled> Allow the anonymous sharing of grinding data</label>
+</div>
+<p class="need-exe"><b>You need the desktop app to use the live tracker.</b> It reads your game window on your PC, which a web page can't do. Download Classic Handbook from <a href="https://github.com/nairck/ClassicHandbook-source" target="_blank" rel="noopener">github.com/nairck/ClassicHandbook-source</a> (ClassicHandbook.exe, or run.py with Python) and open the Live tracker tab there. Screenshots still work on this page: Get info from screenshot, Upload or Ctrl+V, or a screenshot dropped on the page, for your stats, your party and your inventory.</p>
+</div>
+</div>
+</section>
+<section class="pane" id="pane-world"></section>
+</main>
+<div class="win-version" id="win-version"></div>
+</div>
+<div id="toast" class="toast" hidden></div>
+<div id="tip" class="popup" hidden></div>
+<div id="tip-2" class="popup" hidden></div>
+<div id="card" class="hover-card" hidden></div>
+</div>
+<input type="file" id="file-shot" accept="image/*" hidden>
+<input type="file" id="file-bundle" accept=".js,.json,.gz" hidden>
+<script type="text/js-worker" id="worker-src">"use strict";const PYODIDE="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/";let pyodide=null,ready=null,python=null;function status(e){postMessage({type:"status",text:e})}function warm(){return python||(python=(async()=>(status("Loading Python (Pyodide, about 10 MB the first time; your browser keeps it)"),importScripts(PYODIDE+"pyodide.js"),await loadPyodide({indexURL:PYODIDE})))()),python}const JSPI="function"==typeof WebAssembly.Suspending,GPU={device:null,pipe:null,weights:new Map},CONV_WGSL="\nstruct P { n: u32, c: u32, h: u32, w: u32, o: u32 };\n@group(0) @binding(0) var<storage, read> x: array<f32>;\n@group(0) @binding(1) var<storage, read> wt: array<f32>;\n@group(0) @binding(2) var<storage, read> bias: array<f32>;\n@group(0) @binding(3) var<storage, read_write> y: array<f32>;\n@group(0) @binding(4) var<uniform> p: P;\n@compute @workgroup_size(8, 8, 1)\nfn main(@builtin(global_invocation_id) g: vec3<u32>) {\n  if (g.x >= p.w || g.y >= p.h || g.z >= p.n * p.o) { return; }\n  let ni = g.z / p.o;\n  let oi = g.z % p.o;\n  var s = bias[oi];\n  for (var ci = 0u; ci < p.c; ci++) {\n    let xb = (ni * p.c + ci) * p.h * p.w;\n    let wb = (oi * p.c + ci) * 9u;\n    for (var ky = 0u; ky < 3u; ky++) {\n      let iy = i32(g.y) + i32(ky) - 1;\n      if (iy < 0 || iy >= i32(p.h)) { continue; }\n      for (var kx = 0u; kx < 3u; kx++) {\n        let ix = i32(g.x) + i32(kx) - 1;\n        if (ix < 0 || ix >= i32(p.w)) { continue; }\n        s += x[xb + u32(iy) * p.w + u32(ix)] * wt[wb + ky * 3u + kx];\n      }\n    }\n  }\n  y[g.z * p.h * p.w + g.y * p.w + g.x] = s;\n}";self.gpuStart=async()=>{if(GPU.device)return!0;try{if(!JSPI||!navigator.gpu)return!1;const e=await navigator.gpu.requestAdapter();if(!e)return!1;const t=e.limits;return GPU.device=await e.requestDevice({requiredLimits:{maxStorageBufferBindingSize:t.maxStorageBufferBindingSize,maxBufferSize:t.maxBufferSize}}),GPU.pipe=GPU.device.createComputePipeline({layout:"auto",compute:{module:GPU.device.createShaderModule({code:CONV_WGSL}),entryPoint:"main"}}),GPU.device.lost.then((()=>{GPU.device=null,GPU.weights.clear()})),!0}catch(e){return GPU.device=null,!1}};const gpuBuffer=(e,t)=>{const i=GPU.device.createBuffer({size:Math.max(16,e.byteLength),usage:t|GPUBufferUsage.COPY_DST});return GPU.device.queue.writeBuffer(i,0,e),i};self.gpuWeights=(e,t,i)=>{GPU.weights.set(e,{w:gpuBuffer(t,GPUBufferUsage.STORAGE),b:gpuBuffer(i,GPUBufferUsage.STORAGE)})},self.gpuConv=async(e,t,i,a,r,s,o)=>{const n=GPU.device,p=GPU.weights.get(e),d=i*o*r*s*4,u=gpuBuffer(t,GPUBufferUsage.STORAGE),y=n.createBuffer({size:d,usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_SRC}),l=gpuBuffer(new Uint32Array([i,a,r,s,o,0,0,0]),GPUBufferUsage.UNIFORM),g=n.createBuffer({size:d,usage:GPUBufferUsage.MAP_READ|GPUBufferUsage.COPY_DST}),c=n.createBindGroup({layout:GPU.pipe.getBindGroupLayout(0),entries:[u,p.w,p.b,y,l].map(((e,t)=>({binding:t,resource:{buffer:e}})))}),f=n.createCommandEncoder(),m=f.beginComputePass();m.setPipeline(GPU.pipe),m.setBindGroup(0,c),m.dispatchWorkgroups(Math.ceil(s/8),Math.ceil(r/8),i*o),m.end(),f.copyBufferToBuffer(y,0,g,0,d),n.queue.submit([f.finish()]),await g.mapAsync(GPUMapMode.READ);const w=new Float32Array(g.getMappedRange().slice(0));g.unmap();for(const e of[u,y,l,g])e.destroy();return w};const LATER={numpy:"numpy",PIL:"pillow"};async function withPackages(e){for(let t=0;;t++)try{return await e()}catch(e){const i=/No module named '([\w.]+)'/.exec(String(e&&e.message||e)),a=i&&LATER[i[1].split(".")[0]];if(!a||t>2)throw e;await pyodide.loadPackage([a])}}async function init(e,t,i){pyodide=await warm(),status("Starting the model");const a=JSON.parse(e),r=(e,t)=>"string"==typeof t?pyodide.FS.writeFile(e,t):pyodide.FS.writeFile(e.replace(/\.py$/,".pyc"),Uint8Array.from(atob(t.b64),(e=>e.charCodeAt(0))));a.model_py&&pyodide.FS.writeFile("/home/pyodide/model.py",a.model_py);const s=a.model_pkg||null;if(s){pyodide.FS.mkdirTree("/home/pyodide/mplan"),pyodide.FS.writeFile("/home/pyodide/mplan/__init__.py","");for(const[e,t]of Object.entries(s))r("/home/pyodide/mplan/"+e,t)}for(const[e,i]of Object.entries(t))r("/home/pyodide/"+e,i);await withPackages((()=>pyodide.runPython("import sys, importlib; sys.path.insert(0, '/home/pyodide')\n"+(s?"sys.modules['model'] = importlib.import_module('mplan.model')\n":"")+"import planner_web")));const o=pyodide.globals.get("planner_web"),n=JSON.parse(o.load(e));return i&&(n.extra=JSON.parse(o.load_extra(i))),o.destroy(),n}self.onmessage=async e=>{const t=e.data;try{if("warm"===t.type)warm();else if("init"===t.type)ready=init(t.bundle,t.glue,t.extra),postMessage({type:"ready",info:await ready});else if("compute"===t.type){await ready;const e=pyodide.globals.get("planner_web"),i=e=>postMessage({type:"progress",id:t.id,text:e}),a=await withPackages((()=>e.compute(JSON.stringify(t.args),i)));e.destroy(),postMessage({type:"result",id:t.id,res:JSON.parse(a)})}else if("map"===t.type){await ready;const e=pyodide.globals.get("planner_web"),i=await withPackages((()=>e.map_info(t.mid)));e.destroy(),postMessage({type:"map",id:t.id,info:JSON.parse(i)})}else if("call"===t.type){await ready;const e=pyodide.pyimport(t.mod),i=e=>postMessage({type:"progress",id:t.id,text:e}),a=e[t.fn],r=JSON.stringify(void 0===t.args?null:t.args),s=("glue_read"===t.mod||"glue_items"===t.mod)&&JSPI&&a.callPromising,o=await withPackages((()=>s?a.callPromising(r,i):a(r,i)));a.destroy&&a.destroy(),e.destroy(),postMessage({type:"called",id:t.id,res:null==o?null:JSON.parse(o)})}else"packages"===t.type?(await ready,await pyodide.loadPackage(t.names,{messageCallback:e=>postMessage({type:"progress",id:t.id,text:e})}),postMessage({type:"called",id:t.id,res:!0})):"file"===t.type&&(await ready,pyodide.FS.mkdirTree(t.path.slice(0,t.path.lastIndexOf("/"))||"/"),pyodide.FS.writeFile(t.path,new Uint8Array(t.bytes)),postMessage({type:"called",id:t.id,res:!0}))}catch(e){postMessage({type:"error",id:t.id,text:String(e&&e.message?e.message:e)})}};</script>
+<script>!function(){var t=window.MP_SPLASH||(window.MP_SPLASH={});try{var e=t.worker=new Worker(URL.createObjectURL(new Blob([document.getElementById("worker-src").textContent],{type:"text/javascript"})));e.onmessage=function(t){t.data&&"status"===t.data.type&&(document.getElementById("splash-text").textContent=t.data.text)},e.postMessage({type:"warm"})}catch(e){t.worker=null}}();</script>
+<script src="./data/bundle.js" onerror="document.getElementById('splash-text').textContent='data/bundle.js is missing: run web/build_bundle.py first.'"></script>
+<script src="./data/extra.js" onerror="document.getElementById('splash-text').textContent='data/extra.js is missing: run web/build_extra.py first.'"></script>
+<script src="./data/glue.js"></script>
+<script src="./site.js"></script>
+</body>
+</html>
